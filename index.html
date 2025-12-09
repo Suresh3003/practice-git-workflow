@@ -33,7 +33,8 @@
             color: #00285f;
             font-weight: bold;
         }
-        .nav-link:hover{
+
+        .nav-link:hover {
             color: #ffe600;
             font-weight: bold;
         }
@@ -43,13 +44,55 @@
             flex-wrap: wrap;
             max-width: auto;
         }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -2;
+            /* Sends video behind the content */
+        }
+
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Makes video fill screen */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Change opacity here */
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            /* Keeps text above the video */
+            color: rgb(255, 123, 0);
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        p {
+            color: #00285f;
+        }
     </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="apc_blacklogo.png" class="logo" /></a>
+            <a class="navbar-brand" href="index.html"><img src="apc_blacklogo.png" class="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -93,6 +136,22 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     </nav>
+
+
+
+
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="content">
+        <h1>Aditya Pharmacy College | Surampalem</h1>
+        <p>With a global rank of 26571 and a score of 9.63, the college prepares students for careers in the
+            pharmaceutical industry through a comprehensive curriculum that integrates theoretical knowledge with
+            practical training..</p>
+    </div>
 </body>
 
 </html>
